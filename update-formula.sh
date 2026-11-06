@@ -55,7 +55,9 @@ fi)
 
   def install
     bin.install "gnista", "gnista-mcp"
-    resource("app").stage { prefix.install "Gnista.app" } if OS.mac? && resources.any? { |r| r.name == "app" }
+    # Homebrew strips the one folder at the top of the tarball, Gnista.app,
+    # when it unpacks it, so the app is staged into a folder of that name.
+    resource("app").stage(prefix/"Gnista.app") if OS.mac? && resources.any? { |r| r.name == "app" }
   end
 
   def caveats
