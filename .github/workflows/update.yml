@@ -1,6 +1,6 @@
-# Each day, and by hand, rewrites Formula/gnista.rb for Gnista's newest
+# Each day, and by hand, rewrites Formula/e8.rb for E8's newest
 # release and commits it if it changed, so the tap follows releases with no
-# token in Gnista's own repository.
+# token in E8's own repository.
 name: Update
 
 on:
@@ -32,8 +32,8 @@ jobs:
             echo "The formula is current."
             exit 0
           fi
-          version=$(sed -n 's/^  version "\(.*\)"$/\1/p' Formula/gnista.rb)
+          version=$(sed -n 's/^  version "\(.*\)"$/\1/p' Formula/e8.rb)
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "gnista $version"
+          git commit -am "e8 $version"
           git push

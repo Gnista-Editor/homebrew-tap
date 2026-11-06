@@ -1,19 +1,19 @@
-# Homebrew tap for Gnista
+# Homebrew tap for E8
 
-[Gnista](https://github.com/Gnista-Editor/gnista) for Homebrew, on Apple silicon Macs and on Linux:
+[E8](https://github.com/e8-editor/e8) for Homebrew, on Apple silicon Macs and on Linux:
 
 ```bash
-brew install gnista-editor/tap/gnista
+brew install e8-editor/tap/e8
 ```
 
-That installs `gnista`, the editor in a terminal, and `gnista-mcp`, which lets an agent such as Claude Code use Gnista. On a Mac it also installs `Gnista.app`, the editor in a window; to open it from Launchpad and Spotlight, link it into `/Applications`:
+That installs `e8`, the editor in a terminal, and `e8-mcp`, which lets an agent such as Claude Code use E8. On a Mac it also installs `E8.app`, the editor in a window; to open it from Launchpad and Spotlight, link it into `/Applications`:
 
 ```bash
-ln -sf "$(brew --prefix)/opt/gnista/Gnista.app" /Applications/Gnista.app
+ln -sf "$(brew --prefix)/opt/e8/E8.app" /Applications/E8.app
 ```
 
 Homebrew downloads the release with `curl`, so macOS does not quarantine it, and the app opens though it is not signed with an Apple Developer ID.
 
-`brew upgrade gnista` brings it up to date. The formula follows Gnista's releases: a workflow here rewrites it from the newest release each day, with `update-formula.sh`.
+`brew upgrade e8` brings it up to date. The formula follows E8's releases: a workflow here rewrites it from the newest release each day, with `update-formula.sh`.
 
-GPL-3.0-or-later, as Gnista.
+GPL-3.0-or-later, as E8.

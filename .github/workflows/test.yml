@@ -27,20 +27,20 @@ jobs:
 
       - name: Install and test
         run: |
-          brew tap gnista-editor/tap "$GITHUB_WORKSPACE"
-          brew install gnista-editor/tap/gnista
-          brew test gnista-editor/tap/gnista
-          gnista --batch --eval 'gnista.message("gnista " + gnista.variable("gnista-version"))'
+          brew tap e8-editor/tap "$GITHUB_WORKSPACE"
+          brew install e8-editor/tap/e8
+          brew test e8-editor/tap/e8
+          e8 --batch --eval 'e8.message("e8 " + e8.variable("e8-version"))'
 
       # What decides whether macOS opens the app: its ad-hoc signature is
       # intact, and nothing marked it quarantined on the way.
-      - name: Check Gnista.app
+      - name: Check E8.app
         if: runner.os == 'macOS'
         run: |
-          app="$(brew --prefix)/opt/gnista/Gnista.app"
+          app="$(brew --prefix)/opt/e8/E8.app"
           codesign --verify --deep --strict --verbose=2 "$app"
           if xattr -r "$app" | grep -q com.apple.quarantine; then
-            echo "::error::Gnista.app is quarantined"
+            echo "::error::E8.app is quarantined"
             exit 1
           fi
-          echo "Gnista.app is signed and not quarantined"
+          echo "E8.app is signed and not quarantined"
