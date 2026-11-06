@@ -1,27 +1,27 @@
-# Written by update-formula.sh from Gnista 0.2.1's release; edit the
+# Written by update-formula.sh from Gnista 0.2.2's release; edit the
 # script, not this file.
 class Gnista < Formula
   desc "Editor that works the way Emacs works, extended in TypeScript"
   homepage "https://github.com/Gnista-Editor/gnista"
-  version "0.2.1"
+  version "0.2.2"
   license "GPL-3.0-or-later"
 
   on_macos do
     on_arm do
-      url "https://github.com/Gnista-Editor/gnista/releases/download/v0.2.1/gnista-0.2.1-aarch64-apple-darwin.tar.gz"
-      sha256 "9997a479a3d07d94a05e46022d1d93be1113fd5b80f559767e74ad471811d5c6"
+      url "https://github.com/Gnista-Editor/gnista/releases/download/v0.2.2/gnista-0.2.2-aarch64-apple-darwin.tar.gz"
+      sha256 "5982291e09ff06fc1eca641b8de2bef24324ad871410c720309f7b295eed2a29"
 
       resource "app" do
-        url "https://github.com/Gnista-Editor/gnista/releases/download/v0.2.1/Gnista-0.2.1-aarch64-apple-darwin.app.tar.gz"
-        sha256 "6c09e350e0fbc1e61f12347effe1be3e96cfe1718e354ef3641995610e403bec"
+        url "https://github.com/Gnista-Editor/gnista/releases/download/v0.2.2/Gnista-0.2.2-aarch64-apple-darwin.app.tar.gz"
+        sha256 "2cb76a308f4f70ee503fd3e31e408692d58407e3f8a5d234fe36bff2fbb26018"
       end
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/Gnista-Editor/gnista/releases/download/v0.2.1/gnista-0.2.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "2a5f1dd117272c82c4f6f9898cdf97bd744660e213054f762797fc968b74a806"
+      url "https://github.com/Gnista-Editor/gnista/releases/download/v0.2.2/gnista-0.2.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "ed20e1dfebb556f922548b34136c99e321c2b158b424b29272d6e4be7f4da1eb"
     end
   end
 
