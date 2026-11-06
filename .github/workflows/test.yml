@@ -31,3 +31,16 @@ jobs:
           brew install gnista-editor/tap/gnista
           brew test gnista-editor/tap/gnista
           gnista --batch --eval 'gnista.message("gnista " + gnista.variable("gnista-version"))'
+
+      # What decides whether macOS opens the app: its ad-hoc signature is
+      # intact, and nothing marked it quarantined on the way.
+      - name: Check Gnista.app
+        if: runner.os == 'macOS'
+        run: |
+          app="$(brew --prefix)/opt/gnista/Gnista.app"
+          codesign --verify --deep --strict --verbose=2 "$app"
+          if xattr -r "$app" | grep -q com.apple.quarantine; then
+            echo "::error::Gnista.app is quarantined"
+            exit 1
+          fi
+          echo "Gnista.app is signed and not quarantined"
